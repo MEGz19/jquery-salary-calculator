@@ -1,5 +1,7 @@
 console.log('js');
 
+let totalMonthlyCost = 0;
+
 //Jquery ready 
 $(document).ready(readyNow);
 
@@ -17,8 +19,9 @@ function addEmployee(){
     let idNum = $('#idNumIn').val();
     let jobTitle = $('#jobTitleIn').val();
     let annualSalary = $('#annualSalaryIn').val();
+    totalMonthlyCost += Number(annualSalary);
 
-    //This section makes the idNum and annualSalary Numbers and not Strings, then checks them in the console.
+    //This section makes the idNum and annualSalary Numbers and not Strings, then checks all the above variables in the console.
     idNum = Number(idNum);
     annualSalary = Number(annualSalary);
     console.log(firstName, lastName, idNum, jobTitle, annualSalary);
@@ -46,3 +49,11 @@ function addEmployee(){
       $('#annualSalaryIn').val('');
 
 }
+
+function calculateMonthlyCost() {
+    console.log('total monthy cost');
+    
+}
+
+calculateMonthlyCost();
+
