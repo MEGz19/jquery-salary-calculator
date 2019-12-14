@@ -9,6 +9,7 @@ function readyNow() {
     console.log('readyNow');
     // add click listeners
     $('#submitBtn').on('click', addEmployee);
+    calculateMonthlyCost();
 }
 
 function addEmployee(){
@@ -19,7 +20,7 @@ function addEmployee(){
     let idNum = $('#idNumIn').val();
     let jobTitle = $('#jobTitleIn').val();
     let annualSalary = $('#annualSalaryIn').val();
-    totalMonthlyCost += Number(annualSalary);
+    totalMonthlyCost += Number(annualSalary)/12; //makes it monthly, not annual cost
 
     //This section makes the idNum and annualSalary Numbers and not Strings, then checks all the above variables in the console.
     idNum = Number(idNum);
@@ -52,8 +53,10 @@ function addEmployee(){
 
 function calculateMonthlyCost() {
     console.log('total monthy cost');
-    
+    $('#costContainer').empty();
+    $('#costContainer').append('<p id="totalAnnualCost">Total Cost: $ </p>');
+
 }
 
-calculateMonthlyCost();
+
 
