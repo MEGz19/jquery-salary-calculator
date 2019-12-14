@@ -18,7 +18,7 @@ function addEmployee(){
     let jobTitle = $('#jobTitleIn').val();
     let annualSalary = $('#annualSalaryIn').val();
 
-    //This section makes the idNum and annualSalary Numbers and not Strings, then checks the in the console.
+    //This section makes the idNum and annualSalary Numbers and not Strings, then checks them in the console.
     idNum = Number(idNum);
     annualSalary = Number(annualSalary);
     console.log(firstName, lastName, idNum, jobTitle, annualSalary);
@@ -36,10 +36,13 @@ function addEmployee(){
         </tr>
         `
       );
-      
 
-
-
-
+      //empty inputs (once data pushed to DOM)
+      $('#firstNameIn').val(''); 
+      $('#lastNameIn').val('');
+      $('#idNumIn').val('');
+      $('#jobTitleIn').val('');
+      $('#dangerIn').val('');
+      $('#annualSalaryIn').val('');
 
 }
