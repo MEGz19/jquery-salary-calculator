@@ -71,8 +71,8 @@ function calculateMonthlyCost() {
         totalMonthlyCost += Number(employeeList[i].annualSalary)
     }
     totalMonthlyCost = (totalMonthlyCost/12);
-    // annualSalary = Number(annualSalary);
-    // totalMonthlyCost += (annualSalary)/12; 
+    // annualSalary = Number(annualSalary); //no longer relevant
+    // totalMonthlyCost += (annualSalary)/12; //no longer relevant
 
     $('#costContainer').empty();
     $('#costContainer').append('Total Cost: $ ', totalMonthlyCost);
