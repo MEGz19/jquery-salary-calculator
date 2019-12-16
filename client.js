@@ -10,7 +10,7 @@ function readyNow() {
     // add click listeners
     $('#submitBtn').on('click', addEmployee);
     // delete click listener
-    $('#employeeTable').on('click', '.deletBtn', deleteEmployee);
+    $('#employeeTable').on('click', '.deleteBtn', deleteEmployee);
     // calculateMonthlyCost();
 }
 
@@ -76,6 +76,14 @@ function calculateMonthlyCost() {
 
     $('#costContainer').empty();
     $('#costContainer').append('Total Cost: $ ', totalMonthlyCost);
+    changeColor();
+
+    //Change color to Red if total cost > $20k
+    function changeColor() {
+        console.log ('change color');
+        if (totalMonthlyCost > 19999)
+        $('#costContainer').addClass(`redText`); 
+
 }
 
-
+}
