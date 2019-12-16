@@ -1,6 +1,6 @@
 console.log('js');
 
-let totalMonthlyCost = 0;
+let employeeList = [];
 
 //Jquery ready 
 $(document).ready(readyNow);
@@ -11,7 +11,7 @@ function readyNow() {
     $('#submitBtn').on('click', addEmployee);
     // delete click listener
     $('#employeeTable').on('click', '.deletBtn', deleteEmployee);
-    calculateMonthlyCost();
+    // calculateMonthlyCost();
 }
 
 function addEmployee(){
@@ -22,12 +22,12 @@ function addEmployee(){
     let idNum = $('#idNumIn').val();
     let jobTitle = $('#jobTitleIn').val();
     let annualSalary = $('#annualSalaryIn').val();
-    totalMonthlyCost += Number(annualSalary)/12; //makes it monthly, not annual cost
 
-    //This section makes the idNum and annualSalary Numbers and not Strings, then checks all the above variables in the console.
+    let employeeObject = {firstName, lastName, idNum, jobTitle, annualSalary};
+
+    //This section makes the idNum into Number and not Strings, then checks all the above variables in the console.
     idNum = Number(idNum);
-    annualSalary = Number(annualSalary);
-    console.log(firstName, lastName, idNum, jobTitle, annualSalary);
+    console.log(employeeObject);
 
     //append employee user added
     $('#employeeTable').append(
@@ -48,21 +48,34 @@ function addEmployee(){
       $('#lastNameIn').val('');
       $('#idNumIn').val('');
       $('#jobTitleIn').val('');
-      $('#dangerIn').val('');
       $('#annualSalaryIn').val('');
 
-}
+      employeeList.push(employeeObject);
 
-function calculateMonthlyCost() {
-    console.log('total monthy cost');
-    $('#costContainer').empty();
-    $('#costContainer').append('<p id="totalAnnualCost">Total Cost: $ </p>');
-// LEFT OFF HERE !!!!!!!
+      console.log(employeeList);
+      calculateMonthlyCost();
+
 }
 
 //Delete employee button    
 function deleteEmployee() {
     console.log('clicked delete');
-    let button = $(this);
-    button.closest('tr').remove();
+    // let button = 
+    $(this).closest('tr').remove();
 }
+
+function calculateMonthlyCost() {
+    console.log(' in total monthy cost');
+    let totalMonthlyCost = 0;
+    for (i = 0; i < employeeList.length; i++ ) {
+        totalMonthlyCost += Number(employeeList[i].annualSalary)
+    }
+    totalMonthlyCost = (totalMonthlyCost/12);
+    // annualSalary = Number(annualSalary);
+    // totalMonthlyCost += (annualSalary)/12; 
+
+    $('#costContainer').empty();
+    $('#costContainer').append('Total Cost: $ ', totalMonthlyCost);
+}
+
+
