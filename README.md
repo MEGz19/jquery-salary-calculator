@@ -1,10 +1,7 @@
 # Project Name
 JQuery Salary Calculator
 
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
-
 ## Description
 
-Your project description goes here. What problem did you solve? How did you solve it?
+For this project, we needed to create a calculator that would add employee's annual salaries together and then calculate the total monthly cost based on that number. If it was over $20,000, the total monthly cost should display in red.
 
-Additional README details can be found [here](https://github.com/PrimeAcademy/github-finalization-assignment).

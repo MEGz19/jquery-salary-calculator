@@ -25,7 +25,7 @@ function addEmployee(){
 
     let employeeObject = {firstName, lastName, idNum, jobTitle, annualSalary};
 
-    //This section makes the idNum into Number and not Strings, then checks all the above variables in the console.
+    //This section makes the idNum into Number and not a String, then checks all the above variables in the console.
     idNum = Number(idNum);
     console.log(employeeObject);
 
@@ -84,6 +84,6 @@ function calculateMonthlyCost() {
         if (totalMonthlyCost > 19999)
         $('#costContainer').addClass(`redText`); 
 
-}
+    }
 
 }
