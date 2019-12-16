@@ -9,6 +9,8 @@ function readyNow() {
     console.log('readyNow');
     // add click listeners
     $('#submitBtn').on('click', addEmployee);
+    // delete click listener
+    $('#employeeTable').on('click', '.deletBtn', deleteEmployee);
     calculateMonthlyCost();
 }
 
@@ -36,12 +38,12 @@ function addEmployee(){
           <td>${idNum}</td>
           <td>${jobTitle}</td>
           <td>${annualSalary}</td>
-          <td><button class="deleteBtn btn btn-danger">DELETE!</button></td>
+          <td><button class="deleteBtn">DELETE!</button></td>
         </tr>
         `
       );
 
-      //empty inputs (once data pushed to DOM)
+      //empty inputs (once data pushed to DOM
       $('#firstNameIn').val(''); 
       $('#lastNameIn').val('');
       $('#idNumIn').val('');
@@ -55,8 +57,12 @@ function calculateMonthlyCost() {
     console.log('total monthy cost');
     $('#costContainer').empty();
     $('#costContainer').append('<p id="totalAnnualCost">Total Cost: $ </p>');
-
+// LEFT OFF HERE !!!!!!!
 }
 
-
-
+//Delete employee button    
+function deleteEmployee() {
+    console.log('clicked delete');
+    let button = $(this);
+    button.closest('tr').remove();
+}
